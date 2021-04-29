@@ -10,8 +10,7 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: ca-for-all-tls #
-  namespace: cert-manager # 修改为cert-manager的namespace，以让ClusterIssuer的CA Issuer可以使用此证书
+  name: ca-for-all-tls
 spec:
   # Secret names are always required.
   secretName: ca-for-all-tls
@@ -28,7 +27,7 @@ spec:
   dnsNames:
     - kiali.k8s.show
   issuerRef:
-    name: selfsigned-issuer # 指定为自签名发行人
+    name: selfsigned-issuer
     kind: Issuer
     group: cert-manager.io
 ---
@@ -36,7 +35,6 @@ apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
   name: ca-issuer
-  namespace: cert-manager # ClusterIssuer下namespace无效
 spec:
   ca:
     secretName: ca-for-all-tls
