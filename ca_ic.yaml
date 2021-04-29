@@ -4,4 +4,4 @@ metadata:
   name: ca-issuer
 spec:
   ca:
-    secretName: ca-foe-all-tls ###
+    secretName: ca-foe-all-tls
