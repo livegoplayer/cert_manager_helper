@@ -1,0 +1,7 @@
+piVersion: cert-manager.io/v1
+kind: ClusterIssuer ### ClusterIssuer
+metadata:
+  name: ca-issuer
+spec:
+  ca:
+    secretName: ca-foe-all-tls ###
